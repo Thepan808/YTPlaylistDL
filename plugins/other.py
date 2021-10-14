@@ -21,11 +21,11 @@ import asyncio
 @Client.on_message(filters.command("start"))
 async def start_msg(client, message):
 	await message.reply_text(
-		f"Hi {message.from_user.mention},If you need any help, Just click help button.\n\nProject by @Harp_Tech",
+		f"Opa {message.from_user.mention},⚙️ Bem vindo ao bot, para ajuda... Clique no /help.\n\nCriado pelo [Criador](t.me/xPV_D4_M34_S4Y0R1_D3M0N_CR4ZZYx",
 		reply_markup=InlineKeyboardMarkup(
 				[[
-					InlineKeyboardButton("🛠 Help", callback_data=f"help"),
-					InlineKeyboardButton("🧰 About", callback_data=f"about")
+					InlineKeyboardButton("🧐 Quer ajuda, abigor?", callback_data=f"help"),
+					InlineKeyboardButton("🗃️ Sobre", callback_data=f"about")
 				]]
 			),
 		quote=True)
@@ -35,26 +35,26 @@ async def cb_handler(client, update):
 	cb_data = update.data
 	
 	if "help" in cb_data:
-		await update.message.edit_text("Just Send URL with Format.(Audio/Video)\nExample: `https://youtube.com/playlist?list=xxxxxxxxxx audio`\n\nPowered by @Harp_Tech",
+		await update.message.edit_text("Envie o URL com Formato.(Audio/Video)\nExamplo: `https://youtube.com/playlist?list=xxxxxxxxxx audio`\n\nenfim.",
 			reply_markup=InlineKeyboardMarkup(
 				[[
-					InlineKeyboardButton("🧰 About", callback_data=f"about"),
-					InlineKeyboardButton("🔙 Back", callback_data=f"back")
+					InlineKeyboardButton("🗃️ Sobre", callback_data=f"about"),
+					InlineKeyboardButton("🔙 Voltar", callback_data=f"back")
 				]]
 			))
 	elif "about" in cb_data:
-		await update.message.edit_text("Language: Python\nFramework: Pyrogram\nEngine: YTDL\nCorded By: @Anjana_Ma\n\nPowered by @Harp_Tech",
+		await update.message.edit_text("Linguagem: Python\nFramework: Pyrogram\nEngine: YTDL\nCorded By: @xPV_D4_M34_S4Y0R1_D3M0N_CR4ZZYx\n\nOnline pae by Baianor",
 			reply_markup=InlineKeyboardMarkup(
 				[[
-					InlineKeyboardButton("🛠 Help", callback_data=f"help"),
-					InlineKeyboardButton("🔙 Back", callback_data=f"back")
+					InlineKeyboardButton("🧐 Quer ajuda?", callback_data=f"help"),
+					InlineKeyboardButton("🔙 Voltar", callback_data=f"back")
 				]]
 			))
 	elif "back" in cb_data:
-		await update.message.edit_text(f"Hi {update.from_user.mention},If you need any help, Just click help button.\n\nProject by @Harp_Tech",
+		await update.message.edit_text(f"Opa {update.from_user.mention}, clique nesse comando /help.\n\nCriado pelo @xPV_D4_M34_S4Y0R1_D3M0N_CR4ZZYx",
 			reply_markup=InlineKeyboardMarkup(
 				[[
-					InlineKeyboardButton("🛠 Help", callback_data=f"help"),
-					InlineKeyboardButton("🧰 About", callback_data=f"about")
+					InlineKeyboardButton("🙄 Quer ajuda?", callback_data=f"help"),
+					InlineKeyboardButton("⚙️ Sobre", callback_data=f"about")
 				]]
 			))
