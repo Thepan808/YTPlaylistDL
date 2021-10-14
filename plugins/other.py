@@ -21,7 +21,7 @@ import asyncio
 @Client.on_message(filters.command("start"))
 async def start_msg(client, message):
 	await message.reply_text(
-		f"Opa {message.from_user.mention},⚙️ Bem vindo ao bot, para ajuda... Clique no /help.\n\nCriado pelo [Criador](t.me/xPV_D4_M34_S4Y0R1_D3M0N_CR4ZZYx",
+		f"Opa {message.from_user.mention},⚙️ Bem vindo ao bot, para ajuda... Clique no /help.\n\nCriado pelo Criador: ➜ @xPV_D4_M34_S4Y0R1_D3M0N_CR4ZZYx",
 		reply_markup=InlineKeyboardMarkup(
 				[[
 					InlineKeyboardButton("🧐 Quer ajuda, abigor?", callback_data=f"help"),
