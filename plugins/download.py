@@ -133,7 +133,7 @@ async def uloader(client, message):
 
     if is_downloading:
         return await message.reply_text(
-            "`Another download is in progress, try again after sometime.`",
+            "`Outro download está em processo, aguarde mais um pouco pra que possa baixar outra playlist.`",
             quote=True
         )
 
@@ -141,9 +141,9 @@ async def uloader(client, message):
     typee = message.text.split(None, 1)[1]
 
     if "playlist?list=" in url:
-        msg = await client.send_message(message.chat.id, '`Processing...`', reply_to_message_id=message.message_id)
+        msg = await client.send_message(message.chat.id, '`Carregando...`', reply_to_message_id=message.message_id)
     else:
-        return await client.send_message(message.chat.id, '`I think this is invalid link...`', reply_to_message_id=message.message_id)
+        return await client.send_message(message.chat.id, '`Oh, esse link está inválido...`', reply_to_message_id=message.message_id)
 
     out_folder = f"downloads/{uuid.uuid4()}/"
     if not os.path.isdir(out_folder):
@@ -225,7 +225,7 @@ async def uloader(client, message):
     if logchnl:
         await client.send_message(logchnl, f"Name: {message.from_user.mention}\nURL: {url} {typee}")
     try:
-        await msg.edit("`Downloading Playlist...`")
+        await msg.edit("`Baixando a Playlist...`")
         loop = get_running_loop()
         await loop.run_in_executor(None, partial(ytdl_dowload, url, opts))
         filename = sorted(get_lst_of_files(out_folder, []))
@@ -235,7 +235,7 @@ async def uloader(client, message):
 
     c_time = time.time()
     try:
-        await msg.edit("`Uploading.`")
+        await msg.edit("`Pronto, agora estarei enviando, aguarde.`")
     except MessageNotModified:
         pass
     if song:
@@ -274,7 +274,7 @@ async def uloader(client, message):
                         await client.send_video(
                             message.chat.id,
                             single_file,
-                            caption=f"**File:** `{ytdl_data_name_video}`",
+                            caption=f"**Nome:** `{ytdl_data_name_video}`",
                             supports_streaming=True,
                             duration=fduration,
                             width=fwidth,
@@ -301,7 +301,7 @@ def get_lst_of_files(input_directory, output_lst):
 
 async def del_old_msg_send_msg(msg, client, message):
     await msg.delete()
-    await client.send_message(message.chat.id, "`Playlist Upload Success!`")
+    await client.send_message(message.chat.id, "`Playlist foi carregado com Sucesso!`")
 
 def get_metadata(file):
     fwidth = None
@@ -323,7 +323,7 @@ async def pyro_fsub(c, message, fsub):
         if user.status == "kicked":
             await c.send_message(
                 chat_id=message.chat.id,
-                text="Sorry, You are Banned to use me. Contact my [Support Group](https://t.me/harp_chat).",
+                text="Foi mal :(, Você foi banido pra usar o bot. Chame no pv [Chame aqui](https://t.me/xPV_D4_M34_S4Y0R1_D3M0N_CR4ZZYx).",
                 parse_mode="markdown",
                 disable_web_page_preview=True
             )
@@ -331,11 +331,11 @@ async def pyro_fsub(c, message, fsub):
     except UserNotParticipant:
         await c.send_message(
             chat_id=message.chat.id,
-            text="**Please Join My Updates Channel to Use Me!**",
+            text="**Por favor, entre no meu canal para usar...!**",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Join Now", url="https://t.me/harp_tech")
+                        InlineKeyboardButton("Entre", url="https://t.me/GR4V3_S4D_CRAZZY")
                     ]
                 ]
             )
@@ -345,7 +345,7 @@ async def pyro_fsub(c, message, fsub):
         print(kk)
         await c.send_message(
             chat_id=message.chat.id,
-            text="Something went Wrong. Contact my [Support Group](https://t.me/harp_chat).",
+            text="A mimir, by: [Criador](https://t.me/xPV_D4_M34_S4Y0R1_D3M0N_CR4ZZYx).",
             parse_mode="markdown",
             disable_web_page_preview=True)
         return False
