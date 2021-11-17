@@ -20,7 +20,7 @@ import math
 import asyncio
 import logging
 import threading
-from youtube_dl import YoutubeDL
+from yt_dlp import YoutubeDL
 from asyncio import get_running_loop
 from functools import partial
 from hachoir.metadata import extractMetadata
@@ -164,7 +164,7 @@ async def uloader(client, message):
         song = True
     elif (os.environ.get("USE_HEROKU") == "False") and (typee == "audio"):
         opts = {
-            'format':'bestaudio',
+            'format':'best',
             'addmetadata':True,
             'noplaylist': False,
             'key':'FFmpegMetadata',
@@ -241,7 +241,7 @@ async def uloader(client, message):
     if song:
         for single_file in filename:
             if os.path.exists(single_file):
-                if single_file.endswith((".mp4", ".mp3", ".flac", ".webm")):
+                if single_file.endswith((".mp4", ".mp3", ".flac")):
                     try:
                         ytdl_data_name_audio = os.path.basename(single_file)
                         tnow = time.time()
@@ -250,7 +250,7 @@ async def uloader(client, message):
                         await client.send_audio(
                             message.chat.id,
                             single_file,
-                            caption=f"**File:** `{ytdl_data_name_audio}`",
+                            caption=f"**Nome:** `{ytdl_data_name_audio}`",
                             duration=fduration)
                     except Exception as e:
                         await msg.edit("{} caused `{}`".format(single_file, str(e)))
@@ -265,7 +265,7 @@ async def uloader(client, message):
     if video:
         for single_file in filename:
             if os.path.exists(single_file):
-                if single_file.endswith((".mp4", ".mp3", ".flac", ".webm")):
+                if single_file.endswith((".mp4", ".mp3", ".flac")):
                     try:
                         ytdl_data_name_video = os.path.basename(single_file)
                         tnow = time.time()
