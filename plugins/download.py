@@ -250,7 +250,7 @@ async def uloader(client, message):
                         await client.send_audio(
                             message.chat.id,
                             single_file,
-                            caption=f"**File:** `{ytdl_data_name_audio}`",
+                            caption=f"**Nome:** `{ytdl_data_name_audio}`",
                             duration=fduration)
                     except Exception as e:
                         await msg.edit("{} caused `{}`".format(single_file, str(e)))
