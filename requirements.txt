@@ -1,6 +1,6 @@
 asyncio
 hachoir
-pyrogram
+git+https://github.com/pyrogram/pyrogram@master
 tgcrypto
 git+https://github.com/yt-dlp/yt-dlp@master
 uuid
