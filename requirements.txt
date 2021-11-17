@@ -2,5 +2,5 @@ asyncio
 hachoir
 pyrogram
 tgcrypto
-youtube_dl
+git+https://github.com/yt-dlp/yt-dlp@master
 uuid
