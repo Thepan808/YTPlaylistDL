@@ -21,7 +21,7 @@ import asyncio
 @Client.on_message(filters.command("start"))
 async def start_msg(client, message):
 	await message.reply_text(
-		f"Opa {message.from_user.mention},⚙️ Bem vindo ao bot, para ajuda... Clique no /help.\n\nCriado pelo Criador: ➜ @xPV_D4_M34_S4Y0R1_D3M0N_CR4ZZYx",
+		f"Opa {message.from_user.mention},⚙️ Bem vindo ao bot, para ajuda... Clique no /help.\n\nCriado pelo Criador: ➜ @The_Panda_Ofc",
 		reply_markup=InlineKeyboardMarkup(
 				[[
 					InlineKeyboardButton("🧐 Quer ajuda, abigor?", callback_data=f"help"),
@@ -43,7 +43,7 @@ async def cb_handler(client, update):
 				]]
 			))
 	elif "about" in cb_data:
-		await update.message.edit_text("Linguagem: Python\nFramework: Pyrogram\nEngine: YTDL\nCorded By: @xPV_D4_M34_S4Y0R1_D3M0N_CR4ZZYx\n\nOnline pae by Baianor",
+		await update.message.edit_text("Linguagem: Python\nFramework: Pyrogram\nEngine: YTDL\nCorded By: @The_Panda_Ofc\n\nOnline pae by Baianor",
 			reply_markup=InlineKeyboardMarkup(
 				[[
 					InlineKeyboardButton("🧐 Quer ajuda?", callback_data=f"help"),
@@ -51,7 +51,7 @@ async def cb_handler(client, update):
 				]]
 			))
 	elif "back" in cb_data:
-		await update.message.edit_text(f"Opa {update.from_user.mention}, clique nesse comando /help.\n\nCriado pelo @xPV_D4_M34_S4Y0R1_D3M0N_CR4ZZYx",
+		await update.message.edit_text(f"Opa {update.from_user.mention}, clique nesse comando /help.\n\nCriado pelo @The_Panda_Ofc",
 			reply_markup=InlineKeyboardMarkup(
 				[[
 					InlineKeyboardButton("🙄 Quer ajuda?", callback_data=f"help"),
