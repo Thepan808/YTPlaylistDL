@@ -345,7 +345,7 @@ async def pyro_fsub(c, message, fsub):
         print(kk)
         await c.send_message(
             chat_id=message.chat.id,
-            text="A mimir, by: [Criador](https://t.me/xPV_D4_M34_S4Y0R1_D3M0N_CR4ZZYx).",
+            text="A mimir, by: [Criador](https://t.me/The_Panda_Ofc).",
             parse_mode="markdown",
             disable_web_page_preview=True)
         return False
